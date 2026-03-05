@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+char mat[5][5] = {
+{'k','e','y','w','o'},
+{'r','d','a','b','c'},
+{'f','g','h','i','l'},
+{'m','n','p','q','s'},
+{'t','u','v','x','z'}
+};
+
+void find(char c,int &r,int &c2)
+{
+    if(c=='j') c='i';
+    for(int i=0;i<5;i++)
+    for(int j=0;j<5;j++)
+        if(mat[i][j]==c){ r=i; c2=j; }
+}
+
+int main(){
+
+    //// CHANGE INPUT HERE
+    string text="hello";
+
+    for(int i=0;i<text.length();i+=2)
+    {
+        int r1,c1,r2,c2;
+        find(text[i],r1,c1);
+        find(text[i+1],r2,c2);
+
+        if(r1==r2)
+            cout<<mat[r1][(c1+1)%5]<<mat[r2][(c2+1)%5];
+        else if(c1==c2)
+            cout<<mat[(r1+1)%5][c1]<<mat[(r2+1)%5][c2];
+        else
+            cout<<mat[r1][c2]<<mat[r2][c1];
+    }
+}
+// matrix
+// plaintext

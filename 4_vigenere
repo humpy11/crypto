@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    //// CHANGE INPUT HERE
+    string p="HELLO";
+    string k="KEY";
+
+    string c="";
+
+    for(int i=0;i<p.length();i++)
+    {
+        int val=(p[i]-'A'+k[i%k.length()]-'A')%26;
+        c+=(char)(val+'A');
+    }
+
+    cout<<"Cipher: "<<c;
+}

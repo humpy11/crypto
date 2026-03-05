@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    //// CHANGE KEY MATRIX
+    int k[2][2]={{3,3},{2,5}};
+
+    //// CHANGE PLAINTEXT
+    string p="HELP";
+
+    for(int i=0;i<p.length();i+=2)
+    {
+        int a=p[i]-'A';
+        int b=p[i+1]-'A';
+
+        int c1=(a*k[0][0]+b*k[1][0])%26;
+        int c2=(a*k[0][1]+b*k[1][1])%26;
+
+        cout<<(char)(c1+'A')<<(char)(c2+'A');
+    }
+}

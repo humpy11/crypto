@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string xorOp(string a,string b){
+string r="";
+for(int i=0;i<a.length();i++)
+r+=(a[i]==b[i])?'0':'1';
+return r;
+}
+
+int main(){
+
+//// CHANGE INPUT
+string L="11001100000000001100110011111111";
+string R="11110000101010101111000010101010";
+
+string f="10101010101010101010101010101010";
+
+string newR=xorOp(L,f);
+
+cout<<"L1 = "<<R<<endl;
+cout<<"R1 = "<<newR;
+
+}
+// #include <iostream>
+// using namespace std;
+
+// string xorOp(string a,string b){
+//     string r="";
+//     for(int i=0;i<a.length();i++)
+//         r+=(a[i]==b[i])?'0':'1';
+//     return r;
+// }
+
+// int main(){
+
+//     //// CHANGE INPUT HERE
+//     string L="10101010";
+//     string R="11001100";
+//     string K="11110000";
+
+//     string newR=xorOp(R,K);
+
+//     cout<<"L1 = "<<R<<endl;
+//     cout<<"R1 = "<<xorOp(L,newR)<<endl;
+// }
